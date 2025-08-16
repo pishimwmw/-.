@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پیام قهر</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #f0afcf;
+            font-family: 'Vazir', sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 450px;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 4px solid #ff6699;
+        }
+
+        h2 {
+            font-size: 22px;
+            color: #ff6699;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 17px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .signature {
+            margin-top: 40px;
+            font-size: 18px;
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .signature p {
+            font-size: 16px;
+            color: #888;
+            font-weight: normal;
+        }
+
+        .signature span {
+            font-size: 17px;
+            font-weight: bold;
+            color: #ff6699;
+        }
+
+        .submit-btn {
+            margin-top: 30px;
+            padding: 12px 30px;
+            background-color: #ff6699;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .signature-btn {
+            padding: 10px 25px;
+            background-color: #ff6699;
+            color: #ffffff;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .signature-btn:hover {
+            background-color: #ff6699;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="firstPage">
+        <img src="img/nimayda.png" alt="Nini Face">
+        <h2>خیلی باهات قهرم، فکر نکنی زود آشتی میکنما</h2>
+        <p>از دلم دربیار، بعدش باید دوباره قول بدی ولی قول واقعی</p>
+
+        <div class="signature">
+            <p>اینجانب <span>نیما بلابلابلاییان</span> به خانومم <span>آیدا آرامی</span> قول میدم که دیگه سیگار نکشم.</p>
+            <p><span>مجبوری قول بدی 🔪</span></p>
+        </div>
+
+        <button class="signature-btn" onclick="goToSecondPage()">امضا میکنم</button>
+    </div>
+
+    <div class="container hidden" id="secondPage">
+        <h2>آفرین پسر خوب</h2>
+        <p>حالا اینجا امضا کن که قولت رو تایید کنی:</p>
+
+        <!-- قسمت امضای دیجیتال (یک دکمه برای ادامه) -->
+        <button class="submit-btn" onclick="confirmSignature()">تایید قول</button>
+    </div>
+
+    <script>
+        function goToSecondPage() {
+            // مخفی کردن صفحه اول و نمایش صفحه دوم
+            document.getElementById('firstPage').classList.add('hidden');
+            document.getElementById('secondPage').classList.remove('hidden');
+        }
+
+        function confirmSignature() {
+            // مخفی کردن صفحه دوم و نمایش پیام تایید
+            document.getElementById('secondPage').classList.add('hidden');
+            document.getElementById('firstPage').classList.remove('hidden');
+
+            // نمایش پیام تشکر در صفحه اول
+            alert('از قول شما سپاسگزارم. قولتون تایید شد دیگه تکرار نشه!🙃🍋🫧');
+        }
+    </script>
+
+</body>
+</html>
